@@ -1,7 +1,7 @@
 #pragma once
 
-#include <string>
 #include <ostream>
+#include <string>
 
 namespace sm_ns {
 
@@ -16,7 +16,7 @@ class event {
 	// overload for std::unordered_map
 	auto operator==(event) const -> bool;
 
-	friend std::ostream &operator<<(std::ostream &os, const event &event);
+	friend std::ostream& operator<<(std::ostream& os, const event& event);
 
 	std::string name;
 };
