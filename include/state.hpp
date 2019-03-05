@@ -16,8 +16,6 @@ class state {
 
 	explicit state(std::string);
 
-	state(std::string, action);
-
 	// call the action
 	auto operator()() const -> bool;
 
@@ -27,9 +25,6 @@ class state {
 	friend std::ostream& operator<<(std::ostream& os, const state& state);
 
 	std::string name;
-
-  private:
-    std::optional<action> __m_action;
 };
 
 } // namespace sm_ns

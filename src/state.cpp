@@ -7,11 +7,6 @@ state::state(std::string name) : name{std::move(name)}, __m_action{std::nullopt}
 {
 }
 
-state::state(std::string name, class action callback)
-	: name{std::move(name)}, __m_action{std::move(callback)}
-{
-}
-
 auto state::operator()() const -> bool
 {
 	if (__m_action == std::nullopt) {
