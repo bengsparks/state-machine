@@ -23,7 +23,10 @@ class state_machine {
 
 	state current_state;
 
-private:
-	std::unordered_map<state, std::unordered_map<event, state>> __m_transitions;
+  private:
+	std::unordered_map<
+		state,
+		std::unordered_map<event, std::pair<state, std::optional<action>>>>
+		__m_transitions;
 };
 } // namespace sm_ns

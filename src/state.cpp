@@ -28,6 +28,11 @@ auto state::operator==(state other) const -> bool
 	return name == other.name;
 }
 
+template <typename Callback>
+auto make_state(std::string name, Callback callback) -> state {
+  return state{name, action{callback}};
+}
+
 namespace sm_ns {
 auto operator<<(std::ostream& os, const state& state) -> std::ostream&
 {
