@@ -5,7 +5,7 @@
 #include "state_machine.hpp"
 
 auto main(int argc, char* argv[]) -> int {
-    auto transitions = std::unordered_set{
+    auto transitions = sm_ns::transitions{
         sm_ns::make_transition("stopped", "running", "run", []() -> void {
                 std::cout << "stopped -> running : run\n";
         }),

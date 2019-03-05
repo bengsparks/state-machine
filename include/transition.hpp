@@ -1,5 +1,7 @@
 #pragma once
 
+#include <unordered_set>
+
 #include "action.hpp"
 #include "event.hpp"
 #include "state.hpp"
@@ -30,4 +32,5 @@ auto make_transition(std::string from,
 					 std::string trigger,
 					 std::function<auto(void)->void> callback) -> transition;
 
+using transitions = std::unordered_set<transition>;
 } // namespace sm_ns
